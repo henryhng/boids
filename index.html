@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>boids, by henry</title>
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100|Open+Sans:300" rel="stylesheet">
+  <style>
+    /* full screen */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f0f8ff;
+      font-family: 'Verdana', Helvetica, Arial, sans-serif;
+    }
+    canvas {
+      display: block;
+    }
+
+    /* sidebar */
+    #text {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      max-width: 300px;
+      background-color: rgba(240, 248, 255, 0.25);
+      box-shadow: 0 0 15px 5px rgba(240, 248, 255, 0.55);
+      padding: 20px;
+      z-index: 10;
+      color: rgba(84, 61, 94, 0.9);
+    }
+    #title {
+      margin: 0;
+      font-size: 2.5em;
+      font-family: 'Verdana', 'Times New Roman', Times, serif;
+    }
+    #description p {
+      line-height: 1.4;
+      margin: 0.6em 0;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    .source {
+      margin-top: 1em;
+      font-size: 14px;
+    }
+    /* Slider containers */
+    .slider-container {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+    }
+    .slider-container span {
+      margin-left: 8px;
+      min-width: 30px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <article role="main" id="text">
+    <h1 id="title">Bird Flocking</h1>
+    <div id="description">
+      <p>
+        Animation of
+        <a href="https://en.wikipedia.org/wiki/Boids" target="_blank">the boids algorithm</a>.
+      </p>
+      <p>
+        It simulates birds following simple rules of separation, alignment, and cohesion.
+      </p>
+      <p>
+        <!-- Currently: <strong data-count>0</strong> boids at <strong data-fps>0</strong> FPS. -->
+      </p>
+
+      <label for="align">Alignment</label>
+      <div id="alignSliderContainer" class="slider-container"></div>
+
+      <label for="cohesion">Cohesion</label>
+      <div id="cohesionSliderContainer" class="slider-container"></div>
+
+      <label for="separation">Separation</label>
+      <div id="separationSliderContainer" class="slider-container"></div>
+
+      <p class="source">
+        Source at
+        <a href="https://github.com/henryhng/boids" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </article>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+
+  <!-- Your code -->
+  <script src="boid.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
